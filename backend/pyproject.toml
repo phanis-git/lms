@@ -1,0 +1,41 @@
+[project]
+name = "devops-freshers-api"
+version = "0.1.0"
+description = "DevOps Freshers LMS backend"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30",
+  "sqlalchemy>=2.0.30,<2.1",
+  "alembic>=1.13",
+  "psycopg[binary]>=3.2",
+  "pydantic>=2.8,<3",
+  "pydantic-settings>=2.4",
+  "email-validator>=2.2",
+  "argon2-cffi>=23.1",
+  "boto3>=1.34",
+  "python-multipart>=0.0.9",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.2",
+  "httpx>=0.27",
+  "ruff>=0.6",
+  "pip-audit>=2.7",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S", "C4"]
+ignore = ["B008", "S101", "B904", "UP042", "UP046", "S607"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S105", "S106"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

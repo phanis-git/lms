@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+coverage/
+playwright-report/
+test-results/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
